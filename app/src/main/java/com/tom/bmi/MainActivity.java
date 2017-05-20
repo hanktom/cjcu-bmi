@@ -1,6 +1,7 @@
 package com.tom.bmi;
 
 import android.content.SharedPreferences;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -18,7 +19,7 @@ public class MainActivity extends AppCompatActivity {
         findViews();
         float w = getSharedPreferences("aaa",MODE_PRIVATE)
               .getFloat("weight", 0);
-        edWeight.setText(String.valueOf(w));
+        edWeight.setText((w==0)? "":String.valueOf(w));
     }
 
     private void findViews() {
@@ -39,6 +40,10 @@ public class MainActivity extends AppCompatActivity {
                 .putFloat("weight", weight)
                 .putFloat("height", height)
                 .apply();
-
+        new AlertDialog.Builder(this)
+                .setTitle("BMI")
+                .setMessage("Your BMI is :"+bmi)
+                .setPositiveButton("OK", null)
+                .show();
     }
 }
