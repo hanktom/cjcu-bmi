@@ -22,7 +22,7 @@
         android:layout_height="wrap_content"
         android:ems="10"
         android:id="@+id/ed_weight"
-        android:inputType="number" />
+        android:inputType="numberDecimal" />
 
     <TextView
         android:text="Height"
@@ -35,11 +35,12 @@
         android:layout_height="wrap_content"
         android:ems="10"
         android:id="@+id/ed_height"
-        android:inputType="number" />
+        android:inputType="numberDecimal" />
 
     <Button
         android:text="Calculate"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/button" />
+        android:id="@+id/button"
+        android:onClick="bmi" />
 </LinearLayout>
